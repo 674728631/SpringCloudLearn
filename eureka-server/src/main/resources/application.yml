@@ -1,13 +1,13 @@
 server:
-  port: 8761 # \u6307\u5B9A\u670D\u52A1\u7AEF\u53E3
+  port: 8761 # 服务器端口
 eureka:
   instance:
-    hostname: localhost   # \u6307\u5B9A\u4E3B\u673A\u540D\u79F0
-  # server\u4E00\u5B9A\u7A0B\u5EA6\u4E0A\u4E5F\u662Fclient\uFF0C\u4E92\u4E3Aclient
+    hostname: localhost   # 主机名称
+  # server 一定程度上也是client，互为client
   client:
-    register-with-eureka: false # \u7531\u4E8E\u81EA\u5DF1\u5C31\u662F\u670D\u52A1\u5668\uFF0C\u4E0D\u9700\u8981\u6CE8\u518C\u5230\u81EA\u5DF1
-    fetch-registry: false # \u7531\u4E8E\u81EA\u5DF1\u5C31\u662F\u670D\u52A1\u5668\uFF0C\u4E0D\u9700\u8981\u4ECE\u670D\u52A1\u5668\u83B7\u53D6\u6CE8\u518C\u4FE1\u606F
-    service-url:  # \u670D\u52A1\u5730\u5740
+    register-with-eureka: false # 作为注册中心，不向自己注册
+    fetch-registry: false # 不从服务器获取注册信息
+    service-url:  # 服务地址
       defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
 spring:
   application:
