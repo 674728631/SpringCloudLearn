@@ -1,0 +1,20 @@
+server:
+  port: 8781
+eureka:
+  client:
+#    register-with-eureka: true  # 向注册中心注册服务，默认为true
+#    fetch-registry: true  # 从服务器获取注册信息，默认为true
+    region: sc # 指定region，默认值为"us-east-1c"
+    availability-zones: # 可用的zone列表，在获取service-url时会遍历zones，根据指定region下的列表获取第一个可用的url来注册服务
+      sc: cd1,cd2
+    service-url: # 默认 defaultZone: http://localhost:8761/eureka/
+#      defaultZone: http://localhost:8761/eureka/
+      cd1: http://localhost:8761/eureka/
+      cd2: http://localhost:8762/eureka/
+spring:
+  application:
+    name: eureka-feign
+
+feign:
+  hystrix:
+    enabled: true
