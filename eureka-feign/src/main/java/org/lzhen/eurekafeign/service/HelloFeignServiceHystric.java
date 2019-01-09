@@ -5,7 +5,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class HelloFeignServiceHystric implements HelloFeignService {
     @Override
-    public String hiService() {
-        return "sorry!";
+    public String hiService(String name) {
+        return "sorry feign!";
     }
 }

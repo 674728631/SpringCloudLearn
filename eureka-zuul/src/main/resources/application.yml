@@ -2,18 +2,21 @@ server:
   port: 8080
 eureka:
   client:
-#    register-with-eureka: true  # \u5411\u6CE8\u518C\u4E2D\u5FC3\u6CE8\u518C\u670D\u52A1\uFF0C\u9ED8\u8BA4\u4E3Atrue
-#    fetch-registry: true  # \u4ECE\u670D\u52A1\u5668\u83B7\u53D6\u6CE8\u518C\u4FE1\u606F\uFF0C\u9ED8\u8BA4\u4E3Atrue
-    region: sc # \u6307\u5B9Aregion\uFF0C\u9ED8\u8BA4\u503C\u4E3A"us-east-1c"
-    availability-zones: # \u53EF\u7528\u7684zone\u5217\u8868\uFF0C\u5728\u83B7\u53D6service-url\u65F6\u4F1A\u904D\u5386zones\uFF0C\u6839\u636E\u6307\u5B9Aregion\u4E0B\u7684\u5217\u8868\u83B7\u53D6\u7B2C\u4E00\u4E2A\u53EF\u7528\u7684url\u6765\u6CE8\u518C\u670D\u52A1
+#    register-with-eureka: true  # 向注册中心注册服务，默认为true
+#    fetch-registry: true  # 从服务器获取注册信息，默认为true
+    region: sc # 指定region，默认值为"us-east-1c"
+    availability-zones: # 可用的zone列表，在获取service-url时会遍历zones，根据指定region下的列表获取第一个可用的url来注册服务
       sc: cd1,cd2
-    service-url: # \u9ED8\u8BA4 defaultZone: http://localhost:8761/eureka/
+    service-url: # 默认 defaultZone: http://localhost:8761/eureka/
 #      defaultZone: http://localhost:8761/eureka/
       cd1: http://localhost:8761/eureka/
       cd2: http://localhost:8762/eureka/
+
 spring:
   application:
     name: eureka-zuul
+
+
 zuul:
   routes:
     api-a:

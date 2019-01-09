@@ -16,7 +16,7 @@ public class HelloService {
         return restTemplate.getForObject("http://service-hi/hi?name="+name,String.class);
     }
 
-    public String hiError(){
+    public String hiError(String name){
         return "sorry ribbon";
     }
 }

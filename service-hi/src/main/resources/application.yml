@@ -11,6 +11,9 @@ eureka:
 #      defaultZone: http://localhost:8761/eureka/
       cd1: http://localhost:8761/eureka/
       cd2: http://localhost:8762/eureka/
+#  instance:
+#    lease-expiration-duration-in-seconds: 30 # 续约到期时间
+#    lease-renewal-interval-in-seconds: 10 # 续约更新时间间隔
 spring:
   application:
     name: service-hi
