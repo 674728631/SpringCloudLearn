@@ -17,6 +17,7 @@
         <module>eureka-zuul</module>
         <module>config-server</module>
         <module>config-client</module>
+        <module>service-bye</module>
     </modules>
 
     <parent>
