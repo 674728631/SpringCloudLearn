@@ -25,6 +25,12 @@ zuul的过滤功能，继承ZuulFilter即可。
     filterOrder 过滤顺序，数值越小优先级越高
     shouldFilter 逻辑判断是否需要过滤
     run 过滤业务
-    
+
+## config
+http请求config-server 时，格式为 /name/profiles 例如：spring-dev.yml 其中name= spring ，profiles=dev ,返回格式：propertySources中source为读取到的内容；
+也可以直接访问文件名 ，例如/spring-dev.yml ，直接返回文件中的内容 
+
+
+
 ### 坑
 同一个服务工程想用不同的端口想eureka注册，不能引用spring-boot-devtools工具包。因为修改端口后他就会重启啊~
