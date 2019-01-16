@@ -16,4 +16,4 @@ spring:
           predicates:       # 将以/demo/**开头的请求都会转发到uri对应的服务，使用routers时，需要将spring.cloud.gateway.discovery.locator.enabled改为false，否则会对同一个服务创建两个路由，不过两者都可以访问
             - Path=/demo/**
           filters:          # 用StripPrefix的filter 在转发之前将/demo去掉
-            - StripPrefix=1
+            - StripPrefix=1   # 中文
